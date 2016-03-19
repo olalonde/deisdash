@@ -13,7 +13,7 @@ Deis Dash is a web based UI for the [Deis PaaS](http://deis.io/).
 git clone https://github.com/olalonde/deisdash.git
 cd deisdash
 # Create Deis app
-deis create deisdash
+deis create dash
 # Configure app
 ## tells npm to install devDependencies (needed for build)
 deis config:set NPM_CONFIG_PRODUCTION=false
