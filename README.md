@@ -2,7 +2,7 @@
 
 Deis Dash is a web based UI for the [Deis PaaS](http://deis.io/).
 
-[Try it now!](https://www.deisdash.com)
+[Try it now!](http://www.deisdash.com)
 
 ![screenshots](./static/animation.gif)
 
@@ -24,6 +24,17 @@ git push deis
 # Open Deis Dash in web browser
 deis open
 ```
+
+## Configure
+
+Optional configuration:
+
+```
+deis config:set DEFAULT_CONTROLLER=https://deis.yourdomain.com
+```
+
+Some of those configurations will only take effect when the app is
+rebuilt through a git push.
 
 ## Development
 
