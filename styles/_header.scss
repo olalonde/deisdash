@@ -1,0 +1,32 @@
+.navbar {
+  .container {
+    .navbar-brand {
+      margin: 0;
+      padding: 0;
+      padding-right: 10px;
+    }
+    .nav-logo {
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    .user-dropdown {
+      margin: 0;
+      .dropdown-toggle {
+      }
+      .title {
+        float: left;
+        text-align: right;
+        margin-top: -5px;
+        margin-right: 5px;
+        small {
+          display: block;
+          font-size: 11px;
+          color: $gray-semi-light;
+          margin-top: -5px;
+        }
+      }
+    }
+  }
+}

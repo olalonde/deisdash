@@ -1,0 +1,33 @@
+.app-list {
+  margin-left: -15px;
+
+  a {
+    display: block;
+    float: left;
+    clear: both;
+    color: darken($brand-primary, 30%);
+  }
+  .processes {
+    float: right;
+    font-size: 12px;
+    color: $gray-light;
+    span {
+      display: inline-block;
+      padding-left: 5px;
+    }
+  }
+  ::after {
+     content: "";
+     display: block;
+     clear: both;
+  }
+  .create-app-form {
+    button {
+      margin-left: 10px;
+    }
+  }
+}
+
+.tab-body {
+  margin-top: 15px;
+}

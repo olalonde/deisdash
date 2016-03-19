@@ -1,0 +1,16 @@
+.logs-table  {
+  white-space: nowrap;
+  table {
+
+    tbody {
+      font-family: $font-family-monospace;
+      font-size: 11px;
+    }
+
+    .col-process {
+    }
+    .col-text {
+      white-space: pre;
+    }
+  }
+}

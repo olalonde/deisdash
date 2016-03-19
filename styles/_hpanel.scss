@@ -1,0 +1,48 @@
+.h-panel {
+  &.h-panel-first {
+    border-top: none;
+  }
+  padding-top: 20px;
+  padding-bottom: 40px;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid #E7E7EC;
+  position: relative;
+  display: block;
+  border-left: none;
+  border-right: none;
+
+  .h-panel-section {
+    box-sizing: border-box;
+    max-height: 100%;
+
+    // TODO: use media queries to make this work on mobile?
+    .h-panel-description {
+      line-height: 24px;
+      float: left;
+      // todo: use bootstrap variables to find out size of col-md-3
+      width: 25%;
+      padding-left: 15px;
+      padding-right: 15px;
+      font-size: 15px;
+      .h-panel-title {
+        font-size: 16px;
+        font-weight: 200;
+      }
+    }
+    .h-panel-content {
+      width: 75%;
+      float: left;
+    }
+  }
+
+  .h-panel-section:after, .panel-section:before {
+    content: " ";
+    display: table;
+  }
+
+  .h-panel-section:after {
+    clear: both;
+  }
+
+}
