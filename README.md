@@ -25,6 +25,9 @@ git push deis
 deis open
 ```
 
+It was mainly tested on deis v1.12.2. If you find bugs with your version
+of Deis, please report them through Github issues.
+
 ## Configure
 
 Optional configuration:
