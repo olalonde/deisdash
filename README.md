@@ -6,6 +6,26 @@ Deis Dash is a web based UI for the [Deis PaaS](http://deis.io/).
 
 ![screenshots](./static/animation.gif)
 
+Features:
+
+- Login and register
+- Change password and manage Git ssh keys
+- List users, grant admin, delete user (admin only)
+- List and create new apps
+- Scale app
+- Destroy app
+- Edit app configuration
+- List app builds
+- Add and remove app domain names
+- Add and remove app collaborators
+- Display and filter app logs
+
+Roadmap:
+
+- Test and support Deis v2
+- Support pagination
+- Support for tags, releases, certs, limits
+
 ## Install
 
 ```bash
