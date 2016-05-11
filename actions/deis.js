@@ -290,7 +290,7 @@ export const appScale = (appID) => (structure) => (
   }, { action: { type: 'POST_APP_SCALE' } })
 )
 export const appBuilds = (appID) => (
-  client.get(`/apps/${appID}/builds`, {}, { action: { type: 'GET_APP_BUILDS' } })
+  client.get(`/apps/${appID}/releases`, {}, { action: { type: 'GET_APP_BUILDS' } })
 )
 export const appDomainsAdd = (appID) => (domain) => (
   client.post(`/apps/${appID}/domains/`, {

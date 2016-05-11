@@ -48,9 +48,15 @@ class Configuration extends React.Component {
 
     const config = this.props.data.values
 
+    // Sort the ENV Vars by name
+    const ordered_config = {};
+    Object.keys(config).sort().forEach(function(key) {
+      ordered_config[key] = config[key];
+    });
+
     return (
       <ConfigVars
-        config={config}
+        config={ordered_config}
         rowClassName="config-row"
         onUpdate={this.onUpdate}
         onDelete={this.onDelete}

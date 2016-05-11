@@ -30,25 +30,36 @@ class Builds extends React.Component {
     }
 
     const { results } = this.props.data
+    results.reverse()
 
     const builds = []
     for (let i = 0; i < results.length; i++) {
       const build = results[results.length - 1 - i]
       if (!build) break
       builds.push({
-        sha: build.sha,
+        version: build.version,
+        owner: build.owner,
+        summary: build.summary,
         created: moment.utc(build.created).fromNow(),
         uuid: build.uuid,
       })
     }
 
     return (
-      <div className="col-md-4">
+      <div className="col-md-8">
+        <div key="header" className="row">
+          <div className="col-sm-2"><b>Version</b></div>
+          <div className="col-sm-2"><b>User</b></div>
+          <div className="col-sm-2"><b>Date</b></div>
+          <div className="col-sm-2"><b>Summary</b></div>
+        </div>
         {
           builds.map((build) => (
             <div key={build.uuid} className="row">
-              <div className="col-sm-8">{build.sha}</div>
-              <div className="col-sm-4 text-right"><small>{build.created}</small></div>
+              <div className="col-sm-2">v{build.version}</div>
+              <div className="col-sm-2">{build.owner}</div>
+              <div className="col-sm-2"><small>{build.created}</small></div>
+              <div className="col-sm-4"><small>{build.summary}</small></div>
             </div>
           ))
         }

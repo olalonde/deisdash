@@ -19,6 +19,12 @@ class Apps extends Component {
   render() {
     // return <strong>apps...</strong>
     const { apps, children } = this.props
+
+    console.log(children)
+
+    // Sort the apps by name
+    apps.sort(function(a,b) {return (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0);} );
+
     const items = apps.map((app) => (
       <LinkContainer key={app.id} to={`/dash/apps/${app.id}`}>
         <NavItem>{app.id}</NavItem>
