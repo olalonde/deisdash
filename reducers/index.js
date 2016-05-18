@@ -108,6 +108,7 @@ const perms = (state = null, { type, success, error, pending, payload, metadata 
   return state
 }
 const builds = simpleReduce('GET_APP_BUILDS')
+const releases = simpleReduce('GET_APP_RELEASES')
 const logs = simpleReduce('GET_APP_LOGS')
 
 const domains = (state = null, { type, success, error, pending, payload, metadata }) => {
@@ -140,7 +141,7 @@ const domains = (state = null, { type, success, error, pending, payload, metadat
 // @TODO: refactor this, lots of copy/paste
 // @TODO: when pending, reset object
 const activeApp = combineReducers({
-  config, overview, builds, domains, logs, perms,
+  config, overview, builds, releases, domains, logs, perms,
 })
 
 const controllerInfo = (state = null, { type, payload, success, pending, error }) => {

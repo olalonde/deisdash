@@ -45,7 +45,6 @@ class Configuration extends React.Component {
 
   render() {
     if (!this.props.data) return <div></div>
-
     const config = this.props.data.values
 
     // Sort the ENV Vars by name

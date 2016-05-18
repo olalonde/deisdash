@@ -8,6 +8,7 @@ import Overview from './Overview'
 import Logs from './Logs'
 import Config from './Config'
 import Builds from './Builds'
+import Releases from './Releases'
 import Domains from './Domains'
 import Access from './Access'
 
@@ -28,6 +29,7 @@ class Show extends React.Component {
       overview: <Icon glyph="info-sign" />,
       config: <Icon glyph="cog" />,
       builds: <Icon glyph="cloud-upload" />,
+      releases: <Icon glyph="th" />,
       domains: <Icon glyph="globe" />,
       access: <Icon glyph="lock" />,
       logs: <Icon glyph="align-justify" />,
@@ -45,6 +47,9 @@ class Show extends React.Component {
             </LinkContainer>
             <LinkContainer key="builds" to={`/dash/apps/${appID}/builds`}>
               <NavItem>{icons.builds} Builds</NavItem>
+            </LinkContainer>
+            <LinkContainer key="releases" to={`/dash/apps/${appID}/releases`}>
+              <NavItem>{icons.releases} Releases</NavItem>
             </LinkContainer>
             <LinkContainer key="domains" to={`/dash/apps/${appID}/domains`}>
               <NavItem>{icons.domains} Domains</NavItem>
@@ -68,6 +73,7 @@ class Show extends React.Component {
 Show.Overview = Overview
 Show.Logs = Logs
 Show.Builds = Builds
+Show.Releases = Releases
 Show.Config = Config
 Show.Domains = Domains
 Show.Access = Access

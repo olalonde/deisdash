@@ -26,6 +26,7 @@ export default (
           <Route path="config" component={Apps.Show.Config} />
           <Route path="logs" component={Apps.Show.Logs} />
           <Route path="builds" component={Apps.Show.Builds} />
+          <Route path="releases" component={Apps.Show.Releases} />
           <Route path="domains" component={Apps.Show.Domains} />
           <Route path="access" component={Apps.Show.Access} />
         </Route>
