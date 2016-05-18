@@ -20,8 +20,6 @@ class Apps extends Component {
     // return <strong>apps...</strong>
     const { apps, children } = this.props
 
-    console.log(children)
-
     // Sort the apps by name
     apps.sort(function(a,b) {return (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0);} );
 

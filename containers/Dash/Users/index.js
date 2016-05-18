@@ -40,10 +40,11 @@ class Users extends React.Component {
   render() {
     const { users } = this.props
 
+    if (!users) return <div></div>
+
     // Sort by username
     users.sort(function(a,b) {return (a.username > b.username) ? 1 : ((b.username > a.username) ? -1 : 0);} );
 
-    if (!users) return <div></div>
     const userItems = users.map((user) => (
       <UserItem
         key={user.username}
