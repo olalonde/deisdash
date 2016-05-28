@@ -1,6 +1,6 @@
 {
   "name": "deisdash",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Deis Dash is a web based UI for the Deis PaaS",
   "scripts": {
     "start": "node server.js",
