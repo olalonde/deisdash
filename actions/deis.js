@@ -119,7 +119,7 @@ export const controllerInfo = () => (
   client.options('/', {}, {
     action: { type: 'CONTROLLER_INFO' },
     mapResponse: (response, json, baseAction) => {
-      const version = response.headers.get('X_DEIS_API_VERSION')
+      const version = response.headers.get('X_DEIS_API_VERSION') ? response.headers.get('X_DEIS_API_VERSION') : response.headers.get('DEIS_API_VERSION')
       if (version) {
         return {
           ...baseAction,
