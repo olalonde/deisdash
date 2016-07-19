@@ -22,7 +22,7 @@ Features:
 
 Roadmap:
 
-- Test and support Deis v2
+- Test and support Deis v2 (logs not working)
 - Support pagination
 - Support for tags, releases, certs, limits
 
