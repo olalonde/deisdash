@@ -52,8 +52,13 @@ of Deis, please report them through Github issues.
 
 Optional configuration:
 
+To set the default deis controller (by default, deisdash tries to guess
+it based on domain).
+
 ```
-deis config:set DEFAULT_CONTROLLER=https://deis.yourdomain.com
+deis config:set \
+  DEFAULT_CONTROLLER=https://deis.yourdomain.com \
+  CONTROLLER_LOCKED=true
 ```
 
 Some of those configurations will only take effect when the app is
