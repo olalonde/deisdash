@@ -19,7 +19,7 @@ const mapStateToProps = s => ({
 })
 
 /* eslint-disable space-before-keywords */
-const Header = connect(mapStateToProps)(class extends React.Component {
+const Header = connect(mapStateToProps, null, null, {pure: false})(class extends React.Component {
   constructor(props) {
     super(props)
     this.onLogout = this.onLogout.bind(this)
