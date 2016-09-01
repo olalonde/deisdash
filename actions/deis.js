@@ -79,6 +79,7 @@ const client = ['get', 'put', 'post', 'del', 'head', 'options'].reduce((obj, met
   obj[method] = (path, opts = {}, {
     action = {},
     mapResponse = defaultMapResponseToAction,
+    raw = false,
   } = {}) => (dispatch, getState) => {
     const baseAction = { type: compileType(path, method), ...action }
     dispatch({ ...baseAction, payload: opts.body, pending: true })
@@ -98,11 +99,14 @@ const client = ['get', 'put', 'post', 'del', 'head', 'options'].reduce((obj, met
       // Unexpected error... network error?
       err.isFetchError = true
       throw err
-    }).then((response) => (
+    }).then((response) => {
       // Try to parse response as JSON
       // and ignore parsing error
-      response.json().catch(() => null).then((json) => [response, json])
-    )).then(([response, json]) => (
+      if (raw) {
+        return response.text().then((text) => [response, text])
+      }
+      return response.json().catch(() => null).then((json) => [response, json])
+    }).then(([response, json]) => (
       dispatch(mapResponse(response, json, baseAction))
     )).catch((err) => {
       if (err.isFetchError) {
@@ -119,7 +123,8 @@ export const controllerInfo = () => (
   client.options('/', {}, {
     action: { type: 'CONTROLLER_INFO' },
     mapResponse: (response, json, baseAction) => {
-      const version = response.headers.get('X_DEIS_API_VERSION') ? response.headers.get('X_DEIS_API_VERSION') : response.headers.get('DEIS_API_VERSION')
+      const version = response.headers.get('X_DEIS_API_VERSION') ?
+        response.headers.get('X_DEIS_API_VERSION') : response.headers.get('DEIS_API_VERSION')
       if (version) {
         return {
           ...baseAction,
@@ -296,7 +301,7 @@ export const delAppConfig = (appID) => (key) => (
 )
 
 export const appLogs = (appID) => (
-  client.get(`/apps/${appID}/logs`, {}, { action: { type: 'GET_APP_LOGS' } })
+  client.get(`/apps/${appID}/logs`, {}, { action: { type: 'GET_APP_LOGS' }, raw: true })
 )
 
 export const appScale = (appID) => (structure) => (

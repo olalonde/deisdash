@@ -27,8 +27,18 @@ const defaultController = localStorage.controller
   || guessDefaultController()
 const controllerLocked = !!process.env.CONTROLLER_LOCKED
 
+const getControllerInfo = () => {
+  try {
+    return JSON.parse(localStorage.controllerInfo)
+  } catch (err) {
+    console.log(err)
+  }
+  return null
+}
+
 const store = configureStore({
   controller: localStorage.controller || defaultController,
+  controllerInfo: getControllerInfo(),
   user: (() => {
     if (localStorage.token && localStorage.username) {
       return {
