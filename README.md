@@ -10,7 +10,7 @@ Features:
 
 - Login and register
 - Change password and manage Git ssh keys
-- List users, grant admin, delete user (admin only)
+- List users, grant admin, delete user, register user (admin only)
 - List and create new apps
 - Scale app
 - Destroy app
