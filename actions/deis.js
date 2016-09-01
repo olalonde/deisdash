@@ -140,6 +140,10 @@ export const listApps = () => (
   client.get('/apps')
 )
 
+export const listUsers = () => (
+  client.get('/users')
+)
+
 export const login = (username, password) => (
   client.post('/auth/login', { body: { username, password } }, {
     mapResponse: (response, json, baseAction) => {
@@ -253,6 +257,17 @@ export const createApp = (appID) => (dispatch, getState) => (
   })(dispatch, getState).then(() => {
     // refresh app list
     dispatch(listApps())
+  })
+)
+
+export const createUser = (username, password, email) => (dispatch, getState) => (
+  client.post(`/auth/register`, {
+    body: { username, password, email },
+  }, {
+    action: { type: 'POST_USER' },
+  })(dispatch, getState).then(() => {
+    // refresh user list
+    dispatch(listUsers())
   })
 )
 
