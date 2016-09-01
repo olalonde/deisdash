@@ -8,6 +8,10 @@ const parseProcess = (str) => {
   return matches[1] || str
 }
 
+const parseProcessV2 = (str) => (
+  str
+)
+
 const parseLine = line => {
   const firstSpace = line.indexOf(' ')
   const secondSpace = line.indexOf(' ', firstSpace + 1)
@@ -19,23 +23,45 @@ const parseLine = line => {
   return { date, process, text, raw }
 }
 
+const parseLineV2 = line => {
+  const firstSpace = line.indexOf(' ')
+  const raw = line
+  const process = parseProcessV2(line.slice(0, firstSpace).trim())
+  const text = line.slice(firstSpace + 4, line.length)
+
+  return { process, text, raw }
+}
+
 // date, app, process
-const parseLogs = (logs) => (
-  logs.split('\n')
+const parseLogs = (logs) => {
+  const splitLogs = logs.split('\n')
+  /* eslint-disable no-console */
+  // detect v2 log format
+  if (splitLogs.length === 1 && logs.substr(0, 2) === 'b\'' && logs[logs.length - 1] === '\'') {
+    console.log('v2 style log')
+    return logs.substr(2, logs.length - 3).split('\\n')
+      .map((line) => line.trim())
+      .filter((line) => line !== '')
+      .map(parseLineV2)
+  }
+  return splitLogs
     .map((line) => line.trim())
     .filter((line) => line !== '')
     .map(parseLine)
-)
+}
 
+// Merge all rows together, then extract keys
+/*
 const getColumns = (logs) => (
-  // Merge all rows together, then extract keys
   Object.keys(logs.reduce((cols, row) => ({ ...cols, ...row }), {}))
 )
+*/
 
 
 export default class LogsTable extends React.Component {
   constructor(props) {
     super(props)
+
     this.onFilter = this.onFilter.bind(this)
     this.togglePrettyDate = this.togglePrettyDate.bind(this)
 
