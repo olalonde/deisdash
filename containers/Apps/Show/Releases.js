@@ -46,20 +46,20 @@ class Releases extends React.Component {
     }
 
     return (
-      <div className="col-md-8">
+      <div className="col-md-12">
         <div key="header" className="row">
-          <div className="col-sm-2"><b>Version</b></div>
+          <div className="col-sm-1"><b>Version</b></div>
           <div className="col-sm-2"><b>User</b></div>
           <div className="col-sm-2"><b>Date</b></div>
-          <div className="col-sm-2"><b>Summary</b></div>
+          <div className="col-sm-7"><b>Summary</b></div>
         </div>
         {
           releases.map((build) => (
             <div key={build.uuid} className="row">
-              <div className="col-sm-2">v{build.version}</div>
+              <div className="col-sm-1">v{build.version}</div>
               <div className="col-sm-2">{build.owner}</div>
               <div className="col-sm-2"><small>{build.created}</small></div>
-              <div className="col-sm-4"><small>{build.summary}</small></div>
+              <div className="col-sm-7"><small>{build.summary}</small></div>
             </div>
           ))
         }
