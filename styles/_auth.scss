@@ -2,9 +2,9 @@ $gray-semi-light: lighten($gray-base, 70%);
 
 .container-auth {
   // TODO: center everything in middle of page
-  background-image: url('../static/gplaypattern/gplaypattern.png');
+  // background-image: url('../static/gplaypattern/gplaypattern.png');
   display: table;
-  // background-image: url('/static/gplaypattern/pattern-bright.png');
+  background-image: url('/static/gplaypattern/pattern-bright.png');
   height: 100%;
   width: 100%;
 

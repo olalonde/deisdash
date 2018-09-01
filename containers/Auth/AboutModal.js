@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react'
 import { Modal, Button } from 'react-bootstrap'
-import animationGif from '../../static/animation.gif'
+//import animationGif from '../../static/animation.gif'
 
 export default (props) => (
   <Modal {...props} bsSize="large" aria-labelledby="contained-modal-title-lg">
@@ -11,7 +11,7 @@ export default (props) => (
     <Modal.Body>
       <p className="pull-right" style={{ width: '50%' }}>
         <img
-          src={animationGif}
+          src="broken.gif"
           alt="deisdash animation"
           width="100%"
         />
