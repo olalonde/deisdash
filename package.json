@@ -14,8 +14,8 @@
     "package:osx:dmg": "electron-installer-dmg \"./electron/packages/Deis Dash-darwin-x64/Deis Dash.app\" \"Deis Dash\" --icon=./electron/icons.icns --out=./electron/installers/"
   },
   "engines": {
-    "node": "5.5.0",
-    "npm": "3.3.12"
+    "node": "10.9.0",
+    "npm": "6.2.0"
   },
   "repository": {
     "type": "git",
