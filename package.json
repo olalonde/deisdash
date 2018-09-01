@@ -67,7 +67,7 @@
     "eslint-config-airbnb": "^4.0.0",
     "eslint-plugin-react": "^3.16.1",
     "express": "^4.13.3",
-    "file-loader": "^0.8.5",
+    "file-loader": "^2.0.0",
     "node-sass": "^4.9.3",
     "redux-devtools": "^3.1.0",
     "redux-devtools-dock-monitor": "^1.0.1",
