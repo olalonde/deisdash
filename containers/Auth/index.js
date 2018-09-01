@@ -11,8 +11,8 @@ import Login from './Login'
 import AboutModal from './AboutModal'
 
 // import logoImg from '../../static/deis-logo.png'
-import animationGif from '../../static/animation.gif'
-import deisDashLogo from '../../static/deis-dash-logo-md.png'
+//import animationGif from '../../static/animation.gif'
+//import deisDashLogo from '../../static/deis-dash-logo-md.png'
 
 const modals = ['about']
 
@@ -65,7 +65,7 @@ class Auth extends Component {
             <Link to="/about" className="btn btn-link">About</Link>
           </div>
           <div className="text-center header">
-            <img src={deisDashLogo} alt="deis logo" />
+            <img src="broken.gif" alt="deis logo" />
             <span> Deis Dash</span>
             <span className="version">{version}</span>
           </div>
@@ -77,7 +77,7 @@ class Auth extends Component {
             </div>
             <div className={classnames({ 'text-center': true, hide: validController || isElectron })}>
               <img
-                src={animationGif}
+                src="broken.png"
                 alt="deisdash animation"
                 width="730"
                 height="404"

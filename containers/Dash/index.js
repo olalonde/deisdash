@@ -11,7 +11,7 @@ import {
   NavDropdown,
   MenuItem,
 } from 'react-bootstrap'
-import deisDashLogo from '../../static/deis-dash-logo-md.png'
+//import deisDashLogo from '../../static/deis-dash-logo-md.png'
 
 const mapStateToProps = s => ({
   user: s.user,
@@ -47,7 +47,7 @@ const Header = connect(mapStateToProps, null, null, {pure: false})(class extends
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand className="nav-logo">
-            <a href="#"><img src={deisDashLogo} alt="deis dash" /></a>
+            <a href="#"><img src="broken.png" alt="deis dash" /></a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>

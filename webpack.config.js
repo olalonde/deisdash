@@ -11,6 +11,19 @@ var constantsPlugin = new webpack.DefinePlugin({
 })
 
 module.exports = {
+  rules: [
+    {
+      test: /\.(png|jpg|gif)$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            emitFile: false
+          }
+        }
+      ]
+    }
+  ],
   devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client',
